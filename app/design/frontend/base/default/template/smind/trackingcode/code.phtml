@@ -1,0 +1,33 @@
+<?php if ($this->isEnabled()): ?>
+
+<script>
+  //<![CDATA[
+
+  var obj = {
+    Key: '<?php echo $this->getProjectKey(); ?>',
+    Type: 'order',
+    OrderId: '<?php echo $this->getOrderId(); ?>'
+  };
+
+  var products = [];
+
+  <?php foreach($this->getProducts() as $product): ?>
+  products.push({
+    IdProduct: '<?php echo $product['id']; ?>',
+    Name: '<?php echo $product['name']; ?>',
+    Price: '<?php echo $product['price']; ?>',
+    Quantity: '<?php echo $product['qty']; ?>'
+  });
+  <?php endforeach; ?>
+
+  obj.Products = products;
+  var ho = document.createElement('script');
+  ho.id = '_cpxTag';
+  ho.type = 'text/javascript';
+  ho.src = "https://" + "<?php echo $this->getServerUrl(); ?>" + "/Log/LogData?data=" + encodeURIComponent(JSON.stringify(obj));
+  var s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(ho, s);
+
+  //]]>
+</script>
+<?php endif; ?>

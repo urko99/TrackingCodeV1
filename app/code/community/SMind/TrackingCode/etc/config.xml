@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Shopper's mind certified shop satisfaction survey
+ *
+ * @author    Uros Grilc <info@urosgrilc.com>
+ * @category  SMind
+ * @package   TrackingCode
+ * @copyright Copyright (c) 2016 Ceneje d.o.o. (https://www.ceneje.si)
+ */
+-->
+<config>
+    <modules>
+        <SMind_TrackingCode>
+            <version>0.1.0</version>
+        </SMind_TrackingCode>
+    </modules>
+    <global>
+        <blocks>
+            <smind_trackingcode>
+                <class>SMind_TrackingCode_Block</class>
+            </smind_trackingcode>
+        </blocks>
+        <helpers>
+            <smind_trackingcode>
+                <class>SMind_TrackingCode_Helper</class>
+            </smind_trackingcode>
+        </helpers>
+        <models>
+            <smind_trackingcode>
+                <class>SMind_TrackingCode_Model</class>
+            </smind_trackingcode>
+        </models>
+    </global>
+    <frontend>
+        <layout>
+            <updates>
+                <smind_trackingcode module="smind_trackingcode">
+                    <file>smind/trackingcode.xml</file>
+                </smind_trackingcode>
+            </updates>
+        </layout>
+    </frontend>
+    <adminhtml>
+        <translate>
+            <modules>
+                <SMind_TrackingCode>
+                    <files>
+                        <default>SMind_TrackingCode.csv</default>
+                    </files>
+                </SMind_TrackingCode>
+            </modules>
+        </translate>
+    </adminhtml>
+</config>

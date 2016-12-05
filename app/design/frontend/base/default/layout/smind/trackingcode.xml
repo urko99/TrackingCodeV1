@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Shopper's mind certified shop satisfaction survey
+ *
+ * @author    Uros Grilc <info@urosgrilc.com>
+ * @category  SMind
+ * @package   TrackingCode
+ * @copyright Copyright (c) 2016 Ceneje d.o.o. (https://www.ceneje.si)
+ */
+-->
+<layout>
+    <checkout_onepage_success>
+        <reference name="before_body_end">
+            <block type="smind_trackingcode/code" name="smind_trackingcode_code" as="smind_trackingcode_code" template="smind/trackingcode/code.phtml" />
+        </reference>
+    </checkout_onepage_success>
+</layout>
